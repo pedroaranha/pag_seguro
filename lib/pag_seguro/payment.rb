@@ -16,6 +16,7 @@ module PagSeguro
       @sender       = options[:sender] || Sender.new
       @shipping     = options[:shipping]
       @items        = options[:items] || []
+      @payment_method_configs = options[:payment_method_configs] || []
       @extra_amount = options[:extra_amount]
       @redirect_url = options[:redirect_url]
       @max_uses     = options[:max_uses]
@@ -28,7 +29,7 @@ module PagSeguro
     
     def checkout_xml
       xml_content = File.open( File.dirname(__FILE__) + "/checkout.xml.haml" ).read
-      Haml::Engine.new(xml_content).render(nil, items: @items, payment: self, sender: @sender, shipping: @shipping)
+      Haml::Engine.new(xml_content).render(nil, items: @items, payment: self, sender: @sender, shipping: @shipping, payment_method_configs: @payment_method_configs)
     end
     
     def checkout_url_with_params

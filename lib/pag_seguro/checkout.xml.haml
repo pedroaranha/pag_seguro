@@ -25,6 +25,22 @@
         - if item.weight.present?
           %weight= item.weight
 
+  - if payment_method_configs.any?
+    %paymentMethodConfigs
+      - payment_method_configs.each do |payment_method_config|
+        %paymentMethodConfig
+          - if payment_method_config.payment_method.present?
+            %paymentMethod
+              %group= payment_method_config.payment_method
+          - if payment_method_config.configs.any?
+            %configs
+              - payment_method_config.configs.each do |config|
+                %config
+                  - if config.key.present?
+                    %key= config.key
+                  - if config.value.present?
+                    %value= config.value
+
   - if sender.present?
     %sender
       - if sender.name.present?
