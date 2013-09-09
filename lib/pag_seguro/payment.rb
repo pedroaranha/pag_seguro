@@ -25,7 +25,7 @@ module PagSeguro
       @sender       = options[:sender] || Sender.new
       @shipping     = options[:shipping]
       @items        = options[:items] || []
-      @payment_method_config = options[:payment_method_config] || PaymentMethodConfig.new
+      @payment_method_config = options[:payment_method_config]
       @extra_amount = options[:extra_amount]
       @redirect_url = options[:redirect_url]
       @max_uses     = options[:max_uses]
