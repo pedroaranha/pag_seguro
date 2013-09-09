@@ -46,13 +46,14 @@ module PagSeguro
       puts @payment_method_config
       puts "========================"
 
-      haml_engine.render Object.new,
+      puts haml_engine.render Object.new,
                          items: @items,
                          payment: self,
                          sender: @sender,
                          shipping: @shipping,
                          pre_approval: @pre_approval,
                          payment_method_config: @payment_method_config
+      puts "========================"
     end
 
     def checkout_payment_url
