@@ -48,6 +48,7 @@ module PagSeguro
                          shipping: @shipping,
                          pre_approval: @pre_approval,
                          payment_method_config: @payment_method_config
+      puts haml_engine.render
     end
 
     def checkout_payment_url
