@@ -47,7 +47,7 @@ module PagSeguro
                          sender: @sender,
                          shipping: @shipping,
                          pre_approval: @pre_approval,
-                         payment_method_configs: @payment_method_configs
+                         payment_method_config: @payment_method_config
     end
 
     def checkout_payment_url
