@@ -17,6 +17,7 @@ require "convert_field_to_digit"
 # PagSeguro classes
 require "item"
 require "payment_method_config"
+require "config"
 require "payment"
 require "payment_method"
 require "sender"
