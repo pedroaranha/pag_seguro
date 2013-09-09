@@ -7,7 +7,7 @@ module PagSeguro
 
     attr_accessor :id, :email, :token, :items, :sender, :shipping,
                   :extra_amount, :redirect_url, :max_uses, :max_age,
-                  :response, :pre_approval
+                  :response, :pre_approval, :payment_method_config
     alias :reference  :id
     alias :reference= :id=
 
@@ -25,7 +25,7 @@ module PagSeguro
       @sender       = options[:sender] || Sender.new
       @shipping     = options[:shipping]
       @items        = options[:items] || []
-      @payment_method_configs = options[:payment_method_configs] || []
+      @payment_method_config = options[:payment_method_config] || PaymentMethodConfig.new
       @extra_amount = options[:extra_amount]
       @redirect_url = options[:redirect_url]
       @max_uses     = options[:max_uses]
