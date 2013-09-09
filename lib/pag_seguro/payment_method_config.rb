@@ -1,7 +1,7 @@
 module PagSeguro
   class PaymentMethodConfig
     
-    attr_accessor :payment_method, :config
+    attr_accessor :payment_method, :configs
     
     
     def initialize(options = {})
