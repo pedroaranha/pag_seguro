@@ -1,6 +1,5 @@
 module PagSeguro
   class PaymentMethodConfig
-    include ActiveModel::Validations
     
     attr_accessor :payment_method, :config
     
