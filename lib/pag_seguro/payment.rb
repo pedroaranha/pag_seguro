@@ -41,7 +41,7 @@ module PagSeguro
       xml_content = File.open( File.dirname(__FILE__) + "/checkout.xml.haml" ).read
       haml_engine = Haml::Engine.new(xml_content)
 
-      puts haml_engine.render Object.new,
+      haml_engine.render Object.new,
                          items: @items,
                          payment: self,
                          sender: @sender,
